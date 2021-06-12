@@ -1,0 +1,164 @@
+﻿@model TicTacToeGame.Models.TicTacToe
+
+<br />
+<br />
+<div class="container">
+    <h1 id="cross" style="color:green">X</h1>
+    <h1 id="circle" style="color:red">O</h1>
+</div>
+<br />
+<div id="game">
+
+</div>
+<button class="btn btn-danger" type="submit" id="restart">Restart</button>
+<div class="container">
+    <p id="winner"></p>
+
+</div>
+<script>
+    window.onload = function () {
+        var winner = document.getElementById("winner");
+        var cross = document.getElementById("cross");
+        var circle = document.getElementById("circle");
+        document.getElementById('restart').onclick = function (event) {
+            let blocks = document.getElementsByClassName('block');
+            for (let i = 0; i < blocks.length; i++) {
+                blocks[i].textContent = "";
+            }
+        }
+
+        for (var i = 0; i < 9; i++) {
+            document.getElementById('game').innerHTML += '<div class ="block"></div>'
+        }
+        var hod = 0;
+
+        document.getElementById('game').onclick = function (event) {
+            console.log(event)
+            if (event.target.className == 'block') {
+                if (hod % 2 == 0) {
+                    circle.style.color = "red";
+                    cross.style.color = "green";
+                    event.target.innerHTML = "X";
+
+                }
+                else {
+                    cross.style.color = "red";
+                    circle.style.color = "green";
+                    event.target.innerHTML = "O";
+
+                }
+                hod += 1;
+                checkWinner()
+
+            }
+
+        }
+
+        function checkWinner() {
+            var allBlock = document.getElementsByClassName('block')
+
+            if (allBlock[0].innerHTML == "X" && allBlock[1].innerHTML == "X" && allBlock[2].innerHTML == "X")
+                alert(winner.innerHTML = "Победили крестики")
+
+
+            if (allBlock[3].innerHTML == "X" && allBlock[4].innerHTML == "X" && allBlock[5].innerHTML == "X")
+                alert(winner.innerHTML = "Победили крестики")
+
+
+            if (allBlock[6].innerHTML == "X" && allBlock[7].innerHTML == "X" && allBlock[8].innerHTML == "X")
+                alert(winner.innerHTML = "Победили крестики")
+
+
+            if (allBlock[0].innerHTML == "X" && allBlock[3].innerHTML == "X" && allBlock[6].innerHTML == "X")
+                alert(winner.innerHTML = "Победили крестики")
+
+
+            if (allBlock[1].innerHTML == "X" && allBlock[4].innerHTML == "X" && allBlock[7].innerHTML == "X")
+                alert(winner.innerHTML = "Победили крестики")
+
+
+            if (allBlock[2].innerHTML == "X" && allBlock[5].innerHTML == "X" && allBlock[8].innerHTML == "X")
+                alert(winner.innerHTML = "Победили крестики")
+
+
+            if (allBlock[0].innerHTML == "X" && allBlock[4].innerHTML == "X" && allBlock[8].innerHTML == "X")
+                alert(winner.innerHTML = "Победили крестики")
+
+
+            if (allBlock[2].innerHTML == "X" && allBlock[4].innerHTML == "X" && allBlock[6].innerHTML == "X")
+                alert(winner.innerHTML = "Победили крестики")
+
+
+
+            if (allBlock[0].innerHTML == "O" && allBlock[1].innerHTML == "O" && allBlock[2].innerHTML == "O")
+                alert(winner.innerHTML = "Победили Нолики")
+
+            if (allBlock[3].innerHTML == "O" && allBlock[4].innerHTML == "O" && allBlock[5].innerHTML == "O")
+                alert(winner.innerHTML = "Победили Нолики")
+
+
+            if (allBlock[6].innerHTML == "O" && allBlock[7].innerHTML == "O" && allBlock[8].innerHTML == "O")
+                alert(winner.innerHTML = "Победили Нолики")
+
+
+            if (allBlock[0].innerHTML == "O" && allBlock[3].innerHTML == "O" && allBlock[6].innerHTML == "O")
+                alert(winner.innerHTML = "Победили Нолики")
+
+
+            if (allBlock[1].innerHTML == "O" && allBlock[4].innerHTML == "O" && allBlock[7].innerHTML == "O")
+                alert(winner.innerHTML = "Победили Нолики")
+
+
+            if (allBlock[2].innerHTML == "O" && allBlock[5].innerHTML == "O" && allBlock[8].innerHTML == "O")
+                alert(winner.innerHTML = "Победили Нолики")
+
+
+            if (allBlock[0].innerHTML == "O" && allBlock[4].innerHTML == "O" && allBlock[8].innerHTML == "O")
+                alert(winner.innerHTML = "Победили Нолики")
+
+
+            if (allBlock[2].innerHTML == "O" && allBlock[4].innerHTML == "O" && allBlock[6].innerHTML == "O")
+                alert(winner.innerHTML = "Победили Нолики")
+
+
+
+        }
+
+    }
+</script>
+
+<style>
+    h1 {
+        display: inline-block;
+        padding: 20px;
+        margin: 1px;
+        position: relative;
+        float: left;
+    }
+
+    #winner {
+        display: inline;
+        float: right;
+        bottom: 330px;
+        position: relative;
+        font-size: 30px;
+        font-family: cursive;
+        color: green;
+    }
+
+    #game {
+        width: 500px;
+        height: 500px;
+    }
+
+    .block {
+        width: 145px;
+        height: 145px;
+        float: left;
+        border: 1px solid black;
+        box-sizing: border-box;
+        /* line-height: 102px; */
+        text-align: center;
+        font-size: 110px;
+    }
+</style>

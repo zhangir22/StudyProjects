@@ -1,0 +1,33 @@
+﻿@{
+    string result = "Ваш логин::" + User.Identity.Name;
+    <br />
+    <br />
+    <div class="container" id="allElements">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="container" style="text-align:center;">
+                <h1>Крестики и нолики - Tic Tac Toe</h1>
+                <p class="info inf">Игра про всемирную крестики и нолики</p>
+                <p class="info inf">Наслаждайтесь игрой</p>
+            </div>
+            <div class="container" style="text-align:center;"><button class="btn btn-default">@Html.ActionLink("Играть", "Game", "Home")</button></div>
+        }
+        else
+        {
+            result = "Вы не вощли в аккаунт";
+            <div class="container" style="text-align:center;"><h1>@result</h1><button class="btn btn-default">@Html.ActionLink("Войти", "Login", "Account")</button></div>
+        }
+    </div>
+}
+<style>
+
+    .inf {
+        font-family: Microsoft YaHei UI Light;
+        font-size: 25px;
+    }
+
+    h1 {
+        font-size: 40px;
+        font-family: Courier New;
+    }
+</style>
