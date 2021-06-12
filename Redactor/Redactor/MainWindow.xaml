@@ -1,0 +1,61 @@
+﻿<Window x:Class="Redactor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Redactor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="382" Width="499">
+    <Window.Resources>
+    
+        <Style x:Key="BoldType1" TargetType="MenuItem">
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="0,0,2,9">
+        <Menu Height="25" VerticalAlignment="Top">
+            <MenuItem x:Name="Bold" Header="Bold" Style="{StaticResource BoldType}" Click="Bold_Click"></MenuItem>
+            <TextBlock Text="|"></TextBlock>
+            <MenuItem x:Name="Italic" Header="Itlic" Style="{StaticResource ItalicType}" Click="Italic_Click_1"></MenuItem>
+            <TextBlock Text="|"></TextBlock>
+            <MenuItem x:Name="Underline"  Style="{StaticResource UnderlineType}" Header="Underline" Click="Underline_Click"></MenuItem>
+            <TextBlock Text="|"></TextBlock>
+            <MenuItem x:Name="Clear" Header="Clear" Click="Clear_Click"></MenuItem>
+            <TextBlock Text="|"></TextBlock>
+            <MenuItem x:Name="FontSize" Header="FontSIze" Click="FontSize_Click">
+                <TextBox x:Name="UserChose" Width="54" TextChanged="UserChose_TextChanged"/>
+            </MenuItem>
+            <TextBlock Text="|"></TextBlock>
+            <MenuItem x:Name="Color" Header="Color">
+                <StackPanel Orientation="Horizontal" Width="65">
+                    <Ellipse Height="10" Width="10" Fill="Red"></Ellipse>
+                    <MenuItem x:Name="ColorRed" Header="Red" Width="106" Margin="-30,0,0,0" FontSize="10" Click="ColorRed_Click"></MenuItem>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="65">
+                    <Ellipse Height="10" Width="10" Fill="Blue"></Ellipse>
+                    <MenuItem x:Name="ColorBlue" Header="Blue" Margin="-30,0,0,0" Width="105" Height="21" RenderTransformOrigin="0.387,0.619" FontSize="10" Click="ColorBlue_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="65">
+                    <Ellipse Height="10" Width="10" Fill="Green"></Ellipse>
+                    <MenuItem x:Name="ColorGreen" Header="Green" Margin="-30,0,0,0" FontSize="10" Click="ColorGreen_Click"></MenuItem>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="65">
+                    <Ellipse Height="10" Width="10" Fill="Aquamarine"></Ellipse>
+                    <MenuItem x:Name="ColorAquamarin" Header="Aquamarin" Margin="-30,0,0,0" FontSize="10" Click="ColorAquamarin_Click"></MenuItem>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="65">
+                    <Ellipse Height="10" Width="10" Fill="Brown"></Ellipse>
+                    <MenuItem x:Name="ColorBrown" Header="Brown" Margin="-30,0,0,0" FontSize="10" Click="ColorBrown_Click"></MenuItem>
+                </StackPanel>
+            </MenuItem>
+        </Menu>
+        <RichTextBox Margin="0,30,10,0" x:Name="richBox">
+            <FlowDocument>
+                <Paragraph x:Name="par">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        
+    </Grid>
+</Window>
