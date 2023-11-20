@@ -1,7 +1,0 @@
-C:\Users\User\source\repos\UserLibary\UserLibary\obj\Debug\UserLibary.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\UserLibary\UserLibary\bin\Debug\UserLibary.exe.config
-C:\Users\User\source\repos\UserLibary\UserLibary\bin\Debug\UserLibary.exe
-C:\Users\User\source\repos\UserLibary\UserLibary\bin\Debug\UserLibary.pdb
-C:\Users\User\source\repos\UserLibary\UserLibary\obj\Debug\UserLibary.exe
-C:\Users\User\source\repos\UserLibary\UserLibary\obj\Debug\UserLibary.pdb
-C:\Users\User\source\repos\UserLibary\UserLibary\obj\Debug\UserLibary.csproj.AssemblyReference.cache
